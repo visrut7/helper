@@ -1,0 +1,14 @@
+starter template: https://turbo.build/repo/docs/getting-started/create-new
+npx create-turbo@latest
+remove apps/web directory
+inside apps: pnpm dlx @angular/cli ng new web
+I opt for SSR and SSG in Angular
+inside apps: pnpm dlx @nestjs/cli new server
+update package.json in web and server to include (@repo/eslint-config) and (@repo/typescript-config) in devDependencies
+update tsconfig.json in web to extend @repo/typescript-config/base.json
+update tsconfig.json in web to override {"incremental": true} inside compilerOptions
+update tsconfig.json in server to extend @repo/typescript-config/base.json
+update tsconfig.json in server to change module from commonjs to {"module": "NodeNext"} inside compilerOptions
+remove packages/ui directory 
+remove apps/docs directory
+change packages/eslint-config/next.js to packages/eslint-config/common-eslint.js
